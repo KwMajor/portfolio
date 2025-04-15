@@ -1,0 +1,25 @@
+{
+  "name": "portfolio-dsm",
+  "version": "1.0.0",
+  "description": "Meu primeiro portfólio, 1-DSM na Fatec - São José Dos Campos\r Orientador Jean Carlos\r Tecnologias usadas: HTML, CSS, Bootstrap e JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KwMajor/portfolio-DSM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KwMajor/portfolio-DSM/issues"
+  },
+  "homepage": "https://github.com/KwMajor/portfolio-DSM#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "js": "^0.1.0"
+  }
+}

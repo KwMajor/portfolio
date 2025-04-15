@@ -1,0 +1,252 @@
+.navbar {
+    background-color: #2c2c2c;
+}
+
+.nav-link,
+.navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'silkscreen';
+}
+
+.navbar-nav {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'silkscreen';
+}
+
+.navbar.custom-navbar {
+    background-color: #ffffff !important; /* Altere para a cor desejada */
+}
+
+
+
+.corpo {
+    background-color: #2c2c2c;
+}
+
+body {
+    background-color: #2c2c2c !important;
+}
+
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    padding-top: 1%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    transform: skewY(-5deg);
+    font-family: 'silkscreen';
+}
+
+h2 {
+    /* background-color: #929292;
+    border-radius: 25px; */
+    font-family: 'Silkscreen';
+    color: #ffffff;
+}
+
+
+.card-text,
+.card-title {
+    color: #ffffff;
+}
+
+.card-txt {
+    text-justify: left;
+    letter-spacing: -1px;
+    padding: 10px;
+    background-color: #c1c1c1;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgba(41, 41, 38, 0.438);
+}
+
+
+.card {
+    width: 50% !important;
+    box-shadow: 10px 10px 5px rgba(41, 41, 38, 0.438);
+    zoom: 1.1;
+}
+
+.card-body {
+    background-color: #5a5a5a;
+}
+
+
+.card-img-top {
+    border-radius: 50%;
+    padding: 20px;
+    transition: border-radius 1s;
+    box-shadow: 10px 10px 5px rgba(41, 41, 38, 0.438);
+}
+
+.card-img-top:hover {
+    border-radius: 10px;
+}
+
+.img-links {
+    width: 5vw;
+    height: 5vh;
+}
+
+.imgs {
+    width: 5%;
+}
+
+
+.container-p {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+.move-card,
+.cardmove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardmove {
+    min-height: 60vh;
+}
+
+
+.about_me {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    z-index: -1;
+    height: fit-content;
+    width: fit-content;
+    zoom: 1.2;
+}
+
+.txtbox {
+    text-justify: auto;
+    letter-spacing: -1px;
+    width: 45%;
+    margin-top: 5rem;
+    padding: 10px;
+    background-color: #5a5a5a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+@media screen and (max-width: 930px) {
+    .about_me {
+        flex-direction: column-reverse;
+        margin-top: 5%;
+    }
+
+    .txtbox {
+        width: 90%;
+    }
+
+    .foto_perfil {
+        height: auto;
+        width: 70%;
+    }
+
+    .container-fluid {
+        display: flex;
+        justify-content: end !important;
+    }
+
+    .navbar-collapse {
+        display: flex;
+        justify-content: center !important;
+    }
+
+    .navbar-brand {
+        display: flex;
+        justify-content: center;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .navbar-brand img {
+        width: 50%;
+    }
+
+    .tec img {
+        width: 6vw;
+    }
+
+    
+    .card {
+        width: 90% !important;
+    }
+
+    .card-img-top {
+        box-shadow: none;
+        padding: 20px;
+        border-radius: 0;
+    }
+}
+
+
+.foto_perfil {
+    width: 15%;
+    height: 70%;
+    order: 2;
+    box-shadow: 10px 10px 5px rgba(41, 41, 38, 0.356);
+    border-radius: 50%;
+    filter: brightness(90%);
+}
+
+
+.diagonal {
+    position: relative;
+}
+
+.diagonal::after {
+    content: "";
+    margin-top: 1.5rem;
+    background-image: linear-gradient(45deg, #FFFFFF, #D9D9D9, #A6A6A6, #737373, #000000);
+    position: absolute;
+    inset: 0;
+    transform: skewY(-5deg);
+    z-index: -1;
+    box-shadow: 10px 10px 5px rgba(41, 41, 38, 0.582);
+}
+
+
+.tec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.tec img {
+    width: 5vw;
+}
+
+
+.paleta-de-cores {
+    color: #FFFFFF, #d9d9d9, #a6a6a6, #737373 #000000;
+}
+
+
+@font-face {
+    font-family: 'Silkscreen';
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+    src: url(../media/font/Silkscreen-Regular.ttf);
+}
+
+.txtbox{
+    color: #f1f1f1;
+}
