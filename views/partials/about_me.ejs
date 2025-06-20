@@ -1,15 +1,11 @@
 <p class="txtbox">
-    Olá, meu nome é <b>Matheus Ramos</b>, e atualmente estou focado nos meus estudos em <b>Desenvolvimento de Software Multiplataforma</b> na <b>FATEC de São José dos Campos</b>. Tenho grande interesse em tecnologias como inteligência artificial e análise de dados, com uma aplicação especial no setor financeiro.
-
-    Ao longo da minha jornada acadêmica, busco constantemente desenvolver habilidades técnicas robustas e aprofundar meu conhecimento para enfrentar os desafios do mundo da programação. Sou dedicado a aprimorar minhas competências e me manter atualizado com as tendências e exigências do mercado.
-    
-    Estou entusiasmado com as oportunidades futuras nesse campo dinâmico e ansioso para contribuir com minha paixão e comprometimento, impulsionando o desenvolvimento tecnológico.
+    <%- data.about.texto %>
     <br>             
-    <a href="https://www.linkedin.com/in/matheus-felipe-0832b52ba/" target="_blank" rel="noopener noreferrer">
+    <a href="<%= data.about.link1 %>" target="_blank" rel="noopener noreferrer">
         <img class="imgs" src="/imagens/linkedin.svg" alt="LinkedIn logo" width="50">
     </a>
     
-    <a href="https://github.com/KwMajor" target="_blank">
+    <a href="<%= data.about.link2 %>" target="_blank">
         <img class="imgs" src="./imagens/github.svg" alt="GitHub logo" />
     </a>
 </p>

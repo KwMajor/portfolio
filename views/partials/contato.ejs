@@ -1,34 +1,49 @@
-<section class="container-p">
-    <h2>Formação</h2>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title"><b>Alceu Maynard</b></h5>
-            <p class="card-txt"><b>Ensino Médio</b><br>
-                <small>Período: 2014-2016</small>
-            </p>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title"><b>Fatec</b></h5>
-            <p class="card-txt"><b>Curso: Desenvolvimento de Software Multiplataforma</b><br>
-                <small>Período: 2024-2027</small>
-            </p>
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
 
+    <main>
+        <section class="container-p">
+            <h2>Formação</h2>
+            <div class="card">
+                <% if (formacoes && formacoes.length > 0) { %>
+                    <% formacoes.forEach(formacao => { %>
+                        <div class="card-body">
+                            <h5 class="card-title"><b><%= formacao.instituicao %></b></h5>
+                            <p class="card-txt"><b><%= formacao.curso %></b><br>
+                                <small>Período: <%= formacao.anoDeConclusao %></small>
+                            </p>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <div class="card-body">
+                        <p>Nenhuma formação para exibir no momento.</p>
+                    </div>
+                <% } %>
+            </div>
+        </section>
 
-<section class="container-p">
-    <h2>Contato</h2>
-    <div class="card">
-        <div class="card-body">
-            <p>matheuskwta@gmail.com</p>
-            <a href="https://www.linkedin.com/in/matheus-felipe-0832b52ba/">
-                <img class="imgs" src="./imagens/linkedin.svg" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/KwMajor">
-                <img class="imgs" src="./imagens/git.svg" alt="GitHub">
-            </a>
-        </div>
-    </div>
-</section>
+        <section class="container-p">
+            <h2>Contato</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>matheuskwta@gmail.com</p>
+                    <a href="https://www.linkedin.com/in/matheus-felipe-0832b52ba/">
+                        <img class="imgs" src="./imagens/linkedin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/KwMajor">
+                        <img class="imgs" src="./imagens/git.svg" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    </body>
+</html>

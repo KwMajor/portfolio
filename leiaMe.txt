@@ -1,0 +1,165 @@
+Este documento detalha como adicionar, alterar, visualizar e deletar o conteúdo das seções "Projetos", "Formação" e "Sobre Mim" do meu portfolio.
+
+GERENCIANDO PROJETOS
+
+A. Para Adicionar um Novo Projeto
+
+MÉTODO HTTP: POST
+
+URL: http://localhost:3000/api/projects
+
+CORPO (JSON):
+{
+"nome": "Nome do Novo Projeto",
+"descricao": "Uma descrição detalhada sobre o que este projeto faz.",
+"link": "https://github.com/seu-usuario/novo-projeto",
+"imagem": "/imagens/foto_do_projeto.png"
+}
+
+B. Para Alterar (Editar) um Projeto Existente
+
+MÉTODO HTTP: PUT
+
+URL: http://localhost:3000/api/projects/[ID_DO_PROJETO]
+(Exemplo: http://localhost:3000/api/projects/3)
+
+CORPO (JSON):
+{
+"nome": "Nome Atualizado do Projeto",
+"descricao": "Descrição atualizada e corrigida.",
+"link": "https://link-atualizado.com",
+"imagem": "/imagens/imagem_nova.jpg"
+}
+
+C. Para Deletar um Projeto
+
+MÉTODO HTTP: DELETE
+
+URL: http://localhost:3000/api/projects/[ID_DO_PROJETO]
+(Exemplo: http://localhost:3000/api/projects/5)
+
+CORPO (JSON): Não é necessário.
+
+D. Para Visualizar Todos os Projetos
+
+MÉTODO HTTP: GET
+
+URL: http://localhost:3000/api/projects
+
+CORPO (JSON): Não é necessário.
+
+GERENCIANDO FORMAÇÃO
+
+A. Para Adicionar uma Nova Formação
+
+MÉTODO HTTP: POST
+
+URL: http://localhost:3000/api/formacao
+
+CORPO (JSON):
+{
+"instituicao": "Nome da Instituição",
+"curso": "Nome do Curso Realizado",
+"anoDeConclusao": "2023-2024"
+}
+
+B. Para Alterar (Editar) uma Formação Existente
+
+MÉTODO HTTP: PUT
+
+URL: http://localhost:3000/api/formacao/[ID_DA_FORMACAO]
+(Exemplo: http://localhost:3000/api/formacao/1)
+
+CORPO (JSON):
+{
+"instituicao": "Instituição Atualizada",
+"curso": "Curso de Especialização",
+"anoDeConclusao": "2025"
+}
+
+C. Para Deletar uma Formação
+
+MÉTODO HTTP: DELETE
+
+URL: http://localhost:3000/api/formacao/[ID_DA_FORMACAO]
+(Exemplo: http://localhost:3000/api/formacao/2)
+
+CORPO (JSON): Não é necessário.
+
+D. Para Visualizar Todas as Formações
+
+MÉTODO HTTP: GET
+
+URL: http://localhost:3000/api/formacao
+
+CORPO (JSON): Não é necessário.
+
+GERENCIANDO A SEÇÃO "SOBRE MIM"
+
+Esta seção tem apenas um registro e não pode ser adicionada ou deletada.
+
+A. Para Alterar (Editar) as Informações "Sobre Mim"
+
+MÉTODO HTTP: PUT
+
+URL: http://localhost:3000/api/about
+
+CORPO (JSON):
+{
+"texto": "Este é o meu novo texto de apresentação.",
+"link1": "https://linkedin.com/in/seu-perfil-novo",
+"link2": "https://outro-link-importante.com"
+}
+
+B. Para Visualizar as Informações "Sobre Mim"
+
+MÉTODO HTTP: GET
+
+URL: http://localhost:3000/api/about
+
+CORPO (JSON): Não é necessário.
+
+Estrutura do banco de dados utilizado: 
+
+about_index	CREATE TABLE `about_index` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `texto` text,
+  `link1` varchar(255) DEFAULT NULL,
+  `link2` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+projetos	CREATE TABLE `projetos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `descricao` text,
+  `link` varchar(255) DEFAULT NULL,
+  `imagem` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+tecnologias	CREATE TABLE `tecnologias` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+formacao	CREATE TABLE `formacao` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `instituicao` varchar(255) DEFAULT NULL,
+  `curso` varchar(255) DEFAULT NULL,
+  `anoDeConclusao` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+projeto_tecnologia	CREATE TABLE `projeto_tecnologia` (
+  `projeto_id` int DEFAULT NULL,
+  `tecnologia_id` int DEFAULT NULL,
+  KEY `projeto_id` (`projeto_id`),
+  KEY `tecnologia_id` (`tecnologia_id`),
+  CONSTRAINT `projeto_tecnologia_ibfk_1` FOREIGN KEY (`projeto_id`) REFERENCES `projetos` (`id`),
+  CONSTRAINT `projeto_tecnologia_ibfk_2` FOREIGN KEY (`tecnologia_id`) REFERENCES `tecnologias` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+Um dump com os dados foi deixado para alimentar o banco acima!

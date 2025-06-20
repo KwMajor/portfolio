@@ -1,71 +1,26 @@
 <header>
-    <%- include('navbar') %>
+  <%- include('navbar') %>
 </header>
 
 <h1>Meus Projetos</h1>
 
-<!-- Todo o conteúdo de article aqui -->
 <article>
-
-</article>
-        <div class="move-card">
-            <div class="card mb-3 small-card">
-                <img src="./imagens/efeito-doppler-og.jpg" class="card-img-top" alt="logo do projeto DemoQuerycy">
-                <div class="card-body">
-                    <h5 class="card-title">Orbis - Projeto API 2° Semestre</h5>
-                    <p class="card-text">
-                    Dashboard Web com Dados de Impacto
-                    Trata-se de um recurso desenvolvido para visualizar os principais indicadores de patrocinadores que fazem uso da plataforma Helpnei, evindeciando o crescimento e o engajamento dessas empresas.<br>
-                    <br>
-                    O dashboard exibe informações estratégicas em tempo real, incluindo:<br>
-                    
-                    • Número total de lojas criadas<br>
-                    • Quantidade de usuários impactados<br>
-                    • Distribuição geográfica das lojas (cidades atendidas)<br>
-                    <br>
-                    Com uma interface interativa, os usuários poderão analisar tendências e obter insights valiosos para tomada de decisões estratégicas.
-                    </p>
-                    <a href="https://github.com/ORBIS-2DSM-API/orbis-main" class="" target="_blank">
-                        <img class="img-links" src="./imagens/github.svg" alt="GitHub do projeto" />
-                    </a>
-                </div>
-            </div>
-        </div>
-<article>
-    <div class="move-card">
+  <% if (projetos && projetos.length > 0) { %>
+    <% projetos.forEach(projeto => { %>
+      <div class="move-card">
         <div class="card mb-3 small-card">
-            <img src="./imagens/demoquerycy_logo.png" class="card-img-top" alt="logo do projeto DemoQuerycy">
-            <div class="card-body">
-                <h5 class="card-title">DEMOQUERYCY - Projeto API 1° Semestre</h5>
-                <p class="card-text">
-                    O projeto nasceu em resposta à problemática da falta de engajamento político fora do período eleitoral e à falsa sensação de transparência no cenário democrático, onde muitos cidadãos confiam cegamente nas promessas feitas pelos candidatos durante essas campanhas. Nessa prerrogativa, buscamos evidenciar a atuação de cada político na câmara municipal de São José dos Campos.
-                    <br><br>
-                    Nesse contexto, é inevitável refletir sobre os modelos democráticos que moldaram nossa organização social. Na democracia ateniense, por exemplo, os cidadãos, ainda que representando apenas uma pequena parcela do corpo social, exerciam o poder de decisão política de forma direta. Assim, eles defendiam seus interesses de maneira ativa no cenário político.
-                    <br><br>
-                    Entretanto, conforme as organizações políticas se expandiram para níveis nacionais, a prática da democracia direta tornou-se inviável. Reunir milhares de pessoas em uma praça para deliberar é impossível, e por isso elegemos representantes que, em teoria, defendem nossos interesses.
-                    <br><br>
-                    Portanto, diante da falta de engajamento político e dos desafios estruturais da democracia atual, é notório que apenas um povo informado é capaz de realizar o exercício da democracia e, desse modo, terceirizar a defesa de seus direitos e reivindicações através de um representante. Pensando nisso, desenvolvemos este software com o objetivo de, por meio do ambiente digital, reunir informações relevantes para que o eleitorado conheça melhor seus candidatos e suas ações no poder público. Dessa forma, podemos identificar quais políticos realmente defendem os interesses da população.
-                </p>
-                <a href="https://github.com/AgileKrakens/DemoQuerycy" class="" target="_blank">
-                    <img class="img-links" src="./imagens/github.svg" alt="GitHub do projeto" />
-                </a>
-            </div>
+          <img src="/imagens/<%= projeto.imagem %>" class="card-img-top" alt="Imagem do projeto <%= projeto.nome %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= projeto.nome %></h5>
+            <p class="card-text"><%= projeto.descricao %></p>
+            <a href="<%= projeto.link %>" target="_blank">
+              <img class="img-links" src="./imagens/github.svg" alt="GitHub do projeto" />
+            </a>
+          </div>
         </div>
-    </div>
-</article>
-<article>
-    <div class="move-card">
-        <div class="card mb-3 small-card">
-            <img src="./imagens/unesindex.png" class="card-img-top" alt="logo site Unes">
-            <div class="card-body">
-                <h5 class="card-title">Desafio De Desenvolvimento Web</h5>
-                <p class="card-text">
-                    Este projeto consiste no desenvolvimento de um site fictício para uma universidade, focado em oferecer uma experiência de navegação intuitiva e informativa para estudantes, professores e visitantes. A plataforma inclui páginas principais como Home, Sobre, e Contato, além de áreas específicas para acesso ao perfil dos alunos e professores, informações de cursos e eventos acadêmicos. Utilizando HTML, CSS, Flask e JavaScript, o site apresenta um design responsivo e moderno, priorizando usabilidade e clareza na organização das informações. O objetivo é simular um ambiente online completo e funcional, aplicando conhecimentos em desenvolvimento web e técnicas de layout e navegação com Bootstrap.
-                </p>
-                <a href="https://github.com/KwMajor/desafio2" class="" target="_blank">
-                    <img class="img-links" src="./imagens/github.svg" alt="GitHub do projeto" />
-                </a>
-            </div>
-        </div>
-    </div>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p>Nenhum projeto encontrado no banco de dados.</p>
+  <% } %>
 </article>
