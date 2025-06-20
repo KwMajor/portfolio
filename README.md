@@ -41,7 +41,7 @@ Esta é a stack de tecnologias que dá vida ao projeto:
 
 ## ⚙️ Endpoints da API
 
-A API é o cérebro por trás da gerenciabilidade do portfólio. Para um guia detalhado sobre como usar cada endpoint para adicionar, editar e deletar conteúdo, consulte o `GUIA_DA_API.txt` no repositório.
+A API é o cérebro por trás da gerenciabilidade do portfólio. Para um guia detalhado sobre como usar cada endpoint para adicionar, editar e deletar conteúdo, consulte o `leiaMe.txt` no repositório.
 
 **Resumo dos principais endpoints:**
 
@@ -59,7 +59,7 @@ Para executar este projeto em sua máquina local, siga os passos abaixo, caso te
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/KwMajor/portfolio](https://github.com/KwMajor/portfolio)
+    git clone https://github.com/KwMajor/portfolio
     ```
 2.  **Navegue até a pasta do projeto:**
     ```bash
@@ -72,11 +72,11 @@ Para executar este projeto em sua máquina local, siga os passos abaixo, caso te
 4.  **Configure o Banco de Dados:**
     * Crie um banco de dados MySQL.
     * Execute os scripts SQL presentes no repositório para criar as tabelas (`about_index`, `projetos`, `formacao`).
-    * Renomeie o arquivo `.env.example` para `.env` e configure suas credenciais do banco de dados.
+    * Configure suas credenciais do banco de dados.
 
 5.  **Inicie o servidor:**
     ```bash
-    npm start
+    node app.js
     ```
 6.  Abra seu navegador e acesse `http://localhost:3000`.
 
